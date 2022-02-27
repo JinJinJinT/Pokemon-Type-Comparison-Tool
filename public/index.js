@@ -25,7 +25,7 @@
    * Displays a loading screen while the data is being retrieved.
    */
   async function populateTypes() {
-    startLoading();
+    let timer = startLoading();
     const types = await getTypes();
     for (let i = 0; i < types.length; i++) {
       let type = types[i];
@@ -38,6 +38,7 @@
       option.addEventListener("click", clicked);
       document.getElementById("selector").appendChild(option);
     }
+    clearInterval(timer);
     id("start").remove();
     id("selector").classList.remove("hidden");
     id("results").classList.remove("hidden");
@@ -45,10 +46,22 @@
 
   /**
    * Starts the loading screen. Used while grabbing the types and images.
+   * Animates the loading screen by adding up to 3 dots and resetting after 3 dots.
+   * @returns {number} The timer id for the loading screen.
    */
   function startLoading() {
-    qs("#start h3").textContent = "Loading...";
-    qs("button").disabled = true;
+    let text = qs("#start h3");
+    text.textContent = "Loading";
+    let button = qs("button");
+    button.disabled = true;
+    button.textContent = "";
+    return setInterval(() => {
+      if (text.textContent.length === 10) {
+        text.textContent = "Loading";
+      } else {
+        text.textContent += ".";
+      }
+    }, 250);
   }
 
   /**
