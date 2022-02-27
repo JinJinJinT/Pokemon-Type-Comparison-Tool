@@ -15,25 +15,17 @@
   let type2 = "";
 
   window.addEventListener("load", () => {
-    id("start").addEventListener("click", loadTool);
+    id("start").addEventListener("click", populateTypes);
   });
-
-  /**
-   * Loads the tool by removing the start button and adding the tool.
-   */
-  function loadTool() {
-    populateTypes();
-    id("start").remove();
-    id("selector").classList.remove("hidden");
-    id("results").classList.remove("hidden");
-  }
 
   /**
    * Fills the selector tool with images of each pokemon type.
    * The user can click each image to select a type to use the comparison tool.
    * The available types and image url's are retrived from the Node API.
+   * Displays a loading screen while the data is being retrieved.
    */
   async function populateTypes() {
+    startLoading();
     const types = await getTypes();
     for (let i = 0; i < types.length; i++) {
       let type = types[i];
@@ -46,6 +38,17 @@
       option.addEventListener("click", clicked);
       document.getElementById("selector").appendChild(option);
     }
+    id("start").remove();
+    id("selector").classList.remove("hidden");
+    id("results").classList.remove("hidden");
+  }
+
+  /**
+   * Starts the loading screen. Used while grabbing the types and images.
+   */
+  function startLoading() {
+    qs("#start h3").textContent = "Loading...";
+    qs("button").disabled = true;
   }
 
   /**
@@ -244,5 +247,14 @@
    */
   function id(id) {
     return document.getElementById(id);
+  }
+
+  /**
+   * Returns the first element that matches the given CSS selector.
+   * @param {string} query - CSS query selector.
+   * @returns {object[]} array of DOM objects matching the query.
+   */
+  function qs(query) {
+    return document.querySelector(query);
   }
 })();
