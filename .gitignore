@@ -1,0 +1,7 @@
+.*
+!/.gitignore
+!/.gitlab-ci.yml
+node_modules
+.linthtmlrc
+.stylelintrc.json
+.eslintrc.json

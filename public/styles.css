@@ -1,0 +1,119 @@
+/*
+ * This file is the styles.css for the Pokemon type comparison tool.
+ * It uses themes and fonts similar to the Official Pokemon website and formats the
+ * cards and results of the elements choses by the user.
+ */
+body,
+footer,
+#tool,
+#start {
+  display: flex;
+}
+
+body,
+#tool,
+#start {
+  flex-direction: column;
+}
+
+header {
+  height: 20vh;
+}
+
+body {
+  min-height: 100vh;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  background: url("./backgrounds/main_bg.png") fixed;
+  background-size: cover;
+  font-family: "Pokemon Fire Red", sans-serif;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  margin-top: 0px;
+}
+
+section > p {
+  font-size: 35px;
+}
+
+p {
+  font-size: 20px;
+}
+
+button {
+  margin-bottom: 30px;
+  font-size: 35px;
+  padding: 10px;
+  border: 5px outset #bd9425;
+  background: linear-gradient(
+    90deg,
+    rgba(189, 148, 37, 1) 3%,
+    rgba(190, 120, 99, 1) 44%,
+    rgba(136, 121, 209, 1) 98%
+  );
+  color: white;
+  cursor: pointer;
+}
+
+button:active {
+  border: 5px inset #bd9425;
+}
+
+footer {
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  background-image: url("./backgrounds/footer_bg.png");
+  color: #faf9f6;
+}
+
+footer > * {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+#tool {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  padding-top: 25px;
+  border: 5px outset #bd9425;
+  width: auto;
+  height: auto;
+}
+
+.type {
+  width: 10vw;
+}
+
+.selected1,
+.selected2 {
+  border: 3px solid;
+}
+
+.selected1 {
+  border-color: #bd9425;
+}
+
+.selected2 {
+  border-color: #0f479a;
+}
+
+#start {
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 60px;
+}

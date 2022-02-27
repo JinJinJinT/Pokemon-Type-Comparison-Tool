@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+  Jin Terada White
+  CSE 154 AG
+  CP4
+  This is the index.html file for a Pokemon type comparison tool which utilizes the
+  pokeapi and a personal Node JS server to compare pokemon types effectiveness on each other.
+  Type images taken from https://pokemon.fandom.com/wiki/Types?file=PokemonTypes.png
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://fonts.cdnfonts.com/css/pokemon-fire-red">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./index.js"></script>
+    <title>Document</title>
+</head>
+
+
+<body>
+    <header>
+        <h1>Pokemon Type Comparision Tool</h1>
+        <article>
+            <h2>Select two Pokemon types to see how effective the first one is against the other!</h2>
+        </article>
+    </header>
+    <main>
+        <article id="tool">
+            <section id="start">
+                <h3>Press the button to start the tool</h3>
+                <button>Start</button>
+            </section>
+            <section id="selector" class="hidden"></section>
+            <section id="results" class="hidden">
+                <h3><span id="first-pokemon"></span> vs. <span id="second-pokemon"></span></h3>
+                <p>Click some types!</p>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>Author: Jin Terada White</p>
+        <p><a href="https://pokeapi.co/docs/v2#types">API used:</a></p>
+    </footer>
+</body>
+
+</html>

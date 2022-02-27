@@ -1,0 +1,19 @@
+{
+  "name": "cp4-node-api-jintw",
+  "version": "1.0.0",
+  "description": "cp4 cse154",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.cs.washington.edu:cse154-22wi-students/cp4-node-api-jintw.git"
+  },
+  "author": "Jin Terada White",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
