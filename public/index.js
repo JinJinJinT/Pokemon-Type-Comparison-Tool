@@ -55,13 +55,18 @@
     let button = qs("button");
     button.disabled = true;
     button.textContent = "";
-    return setInterval(() => {
-      if (text.textContent.length === 10) {
-        text.textContent = "Loading";
-      } else {
-        text.textContent += ".";
-      }
-    }, 250);
+    return setInterval(animateTimer, 250);
+  }
+
+  /**
+   * Animation for the loading screen timer.
+   */
+  function animateTimer() {
+    if (text.textContent.length === 10) {
+      text.textContent = "Loading";
+    } else {
+      text.textContent += ".";
+    }
   }
 
   /**
